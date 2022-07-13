@@ -1,25 +1,18 @@
-let free = false 
-
-const ValidarEntrada = (time) =>{
-    let edad = prompt("¿Cual es tu edad?");
-    if (edad > 18) {
-        if (time >= 2 && time < 7 && free == false){
-            alert ("podes pasar gratis paaa porque sos la primera persona despues de las 2 AM");
-            free = true;
-
-        } else{
-            alert(`son las ${time}:00Hs y podes pasar, pero tenes que pagar entrada`);
-        }
 
 
-
-    }else {
-        alert("capo sos menor de edad, no podes pasar")
-    }
+class producto{
+    constructor(nombre,marca,precio){
+        this.nombre = nombre;
+        this.marca = marca
+        this.precio = precio;
+}
 }
 
-ValidarEntrada(23)
-ValidarEntrada(4)
-ValidarEntrada(2)
-ValidarEntrada(5)
-ValidarEntrada(8)
+let respuesta
+
+const producto1 = new producto("yerba", "yerbal", 200 )
+const producto2 = new producto("cafe", "feca", 500)
+const producto3 = new producto("queso", "cremosin", 1000)
+const producto4 = new producto("agua", "fresquin", 150)
+const producto5 = new producto("atun", "atunardo", 2000)
+
