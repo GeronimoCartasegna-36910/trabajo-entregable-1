@@ -10,14 +10,12 @@ class Auto {
     }
 }
 
-const Autos = []
-let marca, modelo, año, precio, stock, continua, filtros
 
 function BuscarPorMarca (Autos){
     let NombreMarca = prompt("Ingrese la marca que desee hayar")
-
-    let marcaBuscada = Autos.find(Auto => Auto.marca == NombreMarca)
-
+    
+    let marcaBuscada = Autos.find(autoo => autoo.marca == NombreMarca) 
+    
     if(marcaBuscada == undefined){
         console.log("marca no encontrada")
     } else {
@@ -26,9 +24,9 @@ function BuscarPorMarca (Autos){
 }
 
 function BuscarPorPrecio (Autos){
-    let precio = parseFloat(prompt("Ingrese un precio"))
+    let precio = parseFloat(prompt("Ingrese el/los productos que desee encontrar con precio mayor a:"))
     let precioBuscado = Autos.filter (Auto => Auto.precio >= precio)
-
+    
     if(precioBuscado.length == 0){
         console.log("no hay productos con este precio")
     } else {
@@ -37,17 +35,19 @@ function BuscarPorPrecio (Autos){
 }
 
 function  OrdenarAutos (Autos) {
-
+    
     let MetodoOrdenamiento = parseInt(prompt("Ingrese 1 para ordenar de menor a mayor, 2 para ordenar de mayor a menor"))
-
+    
     if(MetodoOrdenamiento === 1 ){
         console.log(Autos.sort((a,b) => a-b))
-
+        
     }else if(MetodoOrdenamiento === 2){
         console.log(Autos.sort((a,b) => b-a))
     }    
 }
 
+const Autos = []
+let marca, modelo, año, precio, stock, continua, filtros
 
 
 do{
@@ -75,10 +75,10 @@ do{
 do{
     filtros = parseInt(prompt(`Ingrese la opcion que desee:
         1-Buscar por marca
-        2-Buscar por precio
+        2-Buscar por precio mayor a
         3-Ordenar de menor a mayor
     `))
-}while (filtros < 1 || filtros <3)
+}while (filtros <1 || filtros >3)
 
 switch(filtros){
     case 1:
