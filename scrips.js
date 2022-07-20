@@ -10,90 +10,25 @@ class Auto {
     }
 }
 
-
-function BuscarPorMarca (Autos){
-    let NombreMarca = prompt("Ingrese la marca que desee hayar")
-    
-    let marcaBuscada = Autos.find(autoo => autoo.marca == NombreMarca) 
-    
-    if(marcaBuscada == undefined){
-        console.log("marca no encontrada")
-    } else {
-        console.log(marcaBuscada)
-    }
-}
-
-function BuscarPorPrecio (Autos){
-    let precio = parseFloat(prompt("Ingrese el/los productos que desee encontrar con precio mayor a:"))
-    let precioBuscado = Autos.filter (Auto => Auto.precio >= precio)
-    
-    if(precioBuscado.length == 0){
-        console.log("no hay productos con este precio")
-    } else {
-        console.log(precioBuscado)
-    }
-}
-
-function  OrdenarAutos (Autos) {
-    
-    let MetodoOrdenamiento = parseInt(prompt("Ingrese 1 para ordenar de menor a mayor, 2 para ordenar de mayor a menor"))
-    
-    if(MetodoOrdenamiento === 1 ){
-        console.log(Autos.sort((a,b) => a-b))
-        
-    }else if(MetodoOrdenamiento === 2){
-        console.log(Autos.sort((a,b) => b-a))
-    }    
-}
-
-const Autos = []
-let marca, modelo, año, precio, stock, continua, filtros
+const auto1 = new Auto("Ford", "Focus", 2019, `5.000.000`, 20)
+const auto2 = new Auto("Renault", "Sandero rs", 2021, `3.500.000`, 5)
+const auto3 = new Auto("Volkswagen", "Polo GTS", 2022, `6.000.000`, 10)
+const auto4 = new Auto("Toyota", "Etios", 2018, `2.500.000`, 7)
+const auto5 = new Auto("DS", "DS3 sport chic", 2017, `4.000.000`, 3)
 
 
-do{
-    
+const autos = [auto1, auto2, auto3, auto4, auto5]
 
-    do{
-        marca = prompt("Ingrese la marca del vehiculo a agregar").toLowerCase()
-        modelo = prompt("Ingrese el modelo del vehiculo agregado").toLowerCase()
-    } while((marca.length == 0 || modelo.length == 0))
+const divAutos = document.getElementById("autos")
 
-
-    do{
-        año = parseInt(prompt("Ingrese el año del vehiculo agregado"))
-        precio = parseFloat(prompt("Ingrese el precio del vehiculo agregado"))
-        stock = parseInt(prompt("Ingrese el stock del vehiculo agregado"))
-    }while((isNaN(precio) || isNaN(stock)) || isNaN(año) || (precio <= 0 || stock <= 0 || año <= 2010))
-
-    const auto = new Auto(marca, modelo, año, precio, stock)
-    continua = prompt("¿Desea ingresea otro vehiculo?").toLowerCase()
-    Autos.push(auto)
-
-} while (continua !="no")
-
-
-do{
-    filtros = parseInt(prompt(`Ingrese la opcion que desee:
-        1-Buscar por marca
-        2-Buscar por precio mayor a
-        3-Ordenar de menor a mayor
-    `))
-}while (filtros <1 || filtros >3)
-
-switch(filtros){
-    case 1:
-        BuscarPorMarca(Autos)
-    break 
-
-    case 2:
-        BuscarPorPrecio(Autos)
-    break
-
-    case 3:
-        OrdenarAutos(Autos)
-    break
-
-    default:
-        alert("Opcion no valida")
-        break
-}
+autos.forEach(auto =>{
+    divAutos.innerHTML += `
+        <div>
+            <p>Marca:${auto.marca}</p>
+            <p>Modelo:${auto.modelo}</p>
+            <p>Año:${auto.año}</p>
+            <p>Precio:${auto.precio}</p>
+            <p>Stock:${auto.stock}</p>
+        </div>
+    `
+});
