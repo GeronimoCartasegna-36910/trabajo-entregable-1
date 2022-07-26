@@ -1,34 +1,44 @@
 
-
 class Auto {
-    constructor(marca, modelo, año, precio, stock){
-        this.marca = marca
-        this.modelo = modelo
-        this.año = año
-        this.precio = precio
-        this.stock = stock
+    constructor(marca, modelo, precio, stock){
+        this.marca = marca;
+        this.modelo = modelo;
+        this.precio = precio;
+        this.stock = stock;
     }
 }
 
-const auto1 = new Auto("Ford", "Focus", 2019, `5.000.000`, 20)
-const auto2 = new Auto("Renault", "Sandero rs", 2021, `3.500.000`, 5)
-const auto3 = new Auto("Volkswagen", "Polo GTS", 2022, `6.000.000`, 10)
-const auto4 = new Auto("Toyota", "Etios", 2018, `2.500.000`, 7)
-const auto5 = new Auto("DS", "DS3 sport chic", 2017, `4.000.000`, 3)
+const autos = []
 
+const form = document.getElementById("idForm")
+const divListado = document.getElementById("divListado")
+const btnListado = document.getElementById("btnListado")
 
-const autos = [auto1, auto2, auto3, auto4, auto5]
+form.addEventListener("submit", (e) => {
+    e.preventDefault()
 
-const divAutos = document.getElementById("autos")
+    let marca = document.getElementById("idMarca").value;
+    let modelo = document.getElementById("idModelo").value;
+    let precio = document.getElementById("idPrecio").value;
+    let stock = document.getElementById("idStock").value;
 
-autos.forEach(auto =>{
-    divAutos.innerHTML += `
-        <div>
-            <p>Marca:${auto.marca}</p>
-            <p>Modelo:${auto.modelo}</p>
-            <p>Año:${auto.año}</p>
-            <p>Precio:${auto.precio}</p>
-            <p>Stock:${auto.stock}</p>
+    const auto = new Auto (marca, modelo, precio, stock)
+    autos.push(auto)
+
+    form.reset()
+})
+
+btnListado.addEventListener("click", () => {
+    autos.forEach(auto => {
+        divListado.innerHTML += `
+        <div class="card mt-3" style="width: 18rem;">
+            <div class="card-body">
+                <h2 class="card-title">${auto.modelo}</h2>
+                <p class="card-text">Marca: ${auto.marca}</p>
+                <p class="card-text">Precio: ${auto.precio}</p>
+                <p class="card-text">Stock: ${auto.stock}</p>
+            </div>
         </div>
-    `
-});
+        `
+    })
+})
