@@ -18,17 +18,34 @@
   .collapse .nav-link{
     background-color: black;
     color: orange}
-    
   
-  p {
-    font-size: 1.2rem; }
-  
+  .titulo-productos {
+      text-align: center;
+      font-weight: 700;
+      margin-top: 10px;
+      margin-bottom: 1rem; }
 
-.titulo-productos {
-    text-align: center;
-    font-weight: 700;
-    margin-top: 10px;
-    margin-bottom: 1rem; }
+
+    .card{
+      background-color: #000;
+      border-color:  white;
+    }
+
+    .card-body{
+      flex: none;
+      padding: 0;
+      height: 250px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+  .card_img{
+    width: 250px;
+    height: 250px;
+    object-fit:contain;
+    margin: 0 auto;
+  }
 
     
   
