@@ -1,51 +1,64 @@
-* {
-    margin: 0;
+*{
     padding: 0;
-    box-sizing: border-box; }
-  
-  body {
-    font-family: 'Lora', serif;
-    background-color: black;
-    color: white; }
-  
-  .navbar {
-    text-transform: uppercase;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*NAVBAR*/
+.navbar-brand{
+    font-size: 20px;
     font-weight: bold;
-    letter-spacing: .1rem;
-    background: rgba(0, 0, 0, 0.6) !important; }
+}
 
-  
-  .collapse .nav-link{
-    background-color: black;
-    color: orange}
-  
-  .titulo-productos {
-      text-align: center;
-      font-weight: 700;
-      margin-top: 10px;
-      margin-bottom: 1rem; }
+.navbar-brand_span{
+    color: red;
+}
 
+.navbar-link{
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 4px
+}
 
-    .card{
-      background-color: #000;
-      border-color:  white;
-    }
+.cart-icon{
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 5px;
+}
 
-    .card-body{
-      flex: none;
-      padding: 0;
-      height: 250px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
+.navbar-link:hover, .cart-icon:hover{
+    background-color: white;
+    color: black;
+    transition: all .3s;
+}
 
-  .card_img{
-    width: 250px;
-    height: 250px;
-    object-fit:contain;
-    margin: 0 auto;
-  }
+/*TITLE*/
+.main-title{
+  color: #fff;  
+}
 
-    
-  
+/*CARDS*/
+.row{
+    gap: 20px;
+}
+
+.card{
+    background-color: #000;
+    color: #fff;
+}
+
+.card-body{
+    text-align: center;
+}
+
+img{
+    width: 266px;
+    height: 329px;
+    object-fit: scale-down;
+}
+
+/*MODAL*/

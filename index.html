@@ -7,55 +7,48 @@
     <meta name="keywords" content="undefined, hoodies, puffers, shorts">
 
 
-<!--LINKS EXTERNOS-->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://kit.fontawesome.com/6ad7643700.js" crossorigin="anonymous"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,400;1,700&display=swap" rel="stylesheet">
+    <!--LINKS EXTERNOS-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/6ad7643700.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,400;1,700&display=swap" rel="stylesheet">
 
- <!--BOOTSTRAP-->
- <link rel="stylesheet" href="https://bootswatch.com/5/slate/bootstrap.min.css">
- 
-<!--HOJA DE ESTILOS-->
-<link rel="stylesheet" href="estilos.css">
+    <!--BOOTSTRAP-->
+    <link rel="stylesheet" href="https://bootswatch.com/5/slate/bootstrap.min.css">
+    
+    <!--HOJA DE ESTILOS-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="estilos.css">
 
-<title>PRODUCTOS</title>
+    <title>PRODUCTOS</title>
 
-</head>
+  </head>
 <body>
     <!--INICIO HEADER-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="index.html">UNDEFINED</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav m-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link" href="productos.html">PRODUCTOS</a>
-              </li>
-            </ul>
-            <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            </form>
-          </div>
-        </div>
-      </nav>
+    <nav class="navbar navbar-dark bg-dark container">
+      <div class="navbar-container container-fluid d-flex justify-content-around align-items-center">
+        <a class="navbar-brand">HYPE<span class="navbar-brand_span">CLUB</span></a>
+        <a href="#" class="navbar-link">PRODUCTOS</a>
+        <i id="cart-modal" class="cart-icon fa-solid fa-cart-shopping"></i>
+      </div>
+    </nav>
 
     <!--CAJA DE LOS PRODUCTOS-->
         <main>
-            <div class="titulo-productos">
-                <h2>¡NUESTROS PRODUCTOS!</h2>
+            <div class="d-flex justify-content-center mt-2">
+                <h2 class="main-title">¡NUESTROS PRODUCTOS!</h2>
             </div>
 
+            
+
             <section class="container">
-             <div id="idProductos" class="row"></div>
+             <div id="idProductos" class="row justify-content-center"></div>
             </section>
         </main>
 
-
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="scrips.js"></script>
 </body>
 </html>
